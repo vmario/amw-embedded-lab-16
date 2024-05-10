@@ -1,0 +1,68 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "PORT": "\\\\\\.\\${config:port}",
+            "TOOLCHAIN": "${config:toolchain}/bin/avr-",
+            "AVRDUDE": "${config:avrdude}",
+            "USRBIN": "${config:usrbin}",
+            "CONFIGURATION": "${command:cpptools.activeConfigName}",
+        }
+    },
+    "tasks": [
+        {
+            "label": "all",
+            "detail": "Build project",
+            "type": "process",
+            "command": "${config:make}",
+            "args": [
+                "all",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false,
+            },
+            "problemMatcher": [
+                "$gcc",
+            ],
+        },
+        {
+            "label": "clean",
+            "detail": "Clean project",
+            "type": "process",
+            "command": "${config:make}",
+            "args": [
+                "clean",
+            ],
+            "group": {
+                "kind": "build",
+            },
+        },
+        {
+            "label": "program",
+            "detail": "Build project and program the target",
+            "type": "process",
+            "command": "${config:make}",
+            "args": [
+                "program",
+            ],
+            "group": {
+                "kind": "build",
+            },
+        },
+        {
+            "label": "erase",
+            "detail": "Erase the target with the external programmer",
+            "type": "process",
+            "command": "${config:make}",
+            "args": [
+                "erase",
+            ],
+            "group": {
+                "kind": "build",
+            },
+        },
+    ]
+}

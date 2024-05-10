@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "ATmega328P",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${config:toolchain}/avr/include",
+                "${config:toolchain}/lib/gcc/avr/7.3.0/include"
+            ],
+            "defines": [
+                "__DOXYGEN__",
+                "__AVR_ATmega644P__"
+            ]
+        },
+    ],
+    "version": 4
+}

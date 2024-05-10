@@ -1,0 +1,7 @@
+{
+    "port": "COM3",
+    "make": "C:/msys64/usr/bin/make.exe",
+    "toolchain": "C:/Bin/avr8-gnu-toolchain-win32_x86_64",
+    "avrdude": "C:/Bin/avrdude-v7.1-windows-x64/avrdude",
+    "usrbin": "C:/msys64/usr/bin/",
+}
