@@ -2,7 +2,7 @@
 
 all: manual.pdf report.pdf
 
-manual.pdf: manual.md logo.png
+manual.pdf: manual.md logo.png adc-block.png
 	pandoc $< -o $@ --template eisvogel --listings --metadata date="`date +%F`"
 
 report.pdf: report.md
