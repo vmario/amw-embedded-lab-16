@@ -1,5 +1,5 @@
 ---
-title: "Ćwiczenie 15: Synchronizacja przerwania z pętlą główną"
+title: "Ćwiczenie 16: Wielokanałowy ADC sterowany maszyną stanów"
 author: [Mariusz Chilmon <<mariusz.chilmon@ctm.gdynia.pl>>]
 lang: "pl"
 titlepage: no
@@ -37,22 +37,18 @@ _W trosce o Państwa wyniki proszę o czytelne wpisywanie nazwisk._
 
 ## Zadanie podstawowe
 
-Oszacuj liczbę błędów na minutę.
+Oblicz okres Timera 1 w trybie zwykłym (_Normal Mode_), pamiętając, że mikrokontroler taktowany jest zegarem 16&nbsp;MHz, a Timer 1 jest timerem 16-bitowym.
 
-\vspace{1.5cm}
+\vspace{3.5cm}
 
-W jaki sposób liczba błędów zależy od dynamiki zmian temperatury?
+Ile pomiarów na sekundę wykonuje ADC taktowany tym timerem?
 
-\vspace{1.5cm}
+\vspace{3.5cm}
 
 ## Zadanie rozszerzone
 
-Czy przerwania są uruchamiane natychmiast po wykonaniu instrukcji SEI? Dlaczego?
+Oblicz czas trwania pomiaru ADC — pierwszego po uruchomieniu ADC oraz kolejnych.
+
+\awesomebox[violet]{2pt}{\faBook}{violet}{Szczegóły odnośnie taktowania ADC można znaleźć w rozdziale \textit{Analog-to-Digital Converter} w sekcji \textit{Prescaling and Conversion Timing} dokumentacji mikrokontrolera.}
 
 \vspace{1.5cm}
-
-## \faCertificate&nbsp; Zadanie specjalne
-
-_+1 pkt dla osoby, która jako pierwsza poda poprawną odpowiedź._
-
-Po zaimplementowaniu synchronizacji między pętlą główną a obsługą przerwania ADC zmniejszanie częstotliwości odświeżania wyświetlacza za pomocą zmiennej `slowDown` nie jest już potrzebne. Usunięcie tego spowolnienia skutkuje jednak bardzo częstymi zmianami wartości na wyświetlaczu, przez co czytelność wyświetlanej temperatury jest bardzo słaba. Jak zmniejszyć częstotliwość pomiaru wykonywanego przez ADC, nie obciążając przy tym CPU żadnymi opóźnieniami?
